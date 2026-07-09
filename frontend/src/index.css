@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --color-dark-900: #0B1112;
+  --color-dark-800: #10171A;
+  --color-dark-700: #1A2422;
+  --color-dark-600: #212D2A;
+  --color-dark-500: #2A3634;
+
+  --color-amber-400: #F2B255;
+  --color-amber-500: #E8A33D;
+  --color-amber-600: #C9832A;
+
+  --color-teal-400: #6FBDB2;
+  --color-teal-500: #4FA69C;
+
+  --color-cream-100: #F3EFE7;
+  --color-cream-500: #93A39D;
+}
+
+body {
+  background-color: var(--color-dark-800);
+  color: var(--color-cream-100);
+  font-family: var(--font-body);
+}
+
+.sprockets {
+  background-image: radial-gradient(circle, var(--color-dark-600) 2.5px, transparent 2.5px);
+  background-size: 24px 100%;
+  background-position: center;
+  height: 10px;
+}
+
+@keyframes blink-rec {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+.rec-dot {
+  animation: blink-rec 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rec-dot {
+    animation: none;
+  }
+}
